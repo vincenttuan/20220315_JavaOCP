@@ -10,5 +10,8 @@ public class AccountMain3 {
         // 提款 30 元
         ac1.withdrawal(30);
         ac1.print();
+        // 提款 150 元
+        ac1.withdrawal(-150);
+        ac1.print();
     }
 }
