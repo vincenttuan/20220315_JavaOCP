@@ -11,6 +11,11 @@ public class Account {
         balance += amount;
     }
     
+    // 提款的程序(提款方法)
+    public void withdrawal(int amount) {
+        balance -= amount; // balance = balance - amount;
+    }
+    
     // 印出帳戶餘額
     public void print() {
         System.out.printf("%s $%,d\n", name, balance);
