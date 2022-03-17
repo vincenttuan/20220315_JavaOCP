@@ -23,5 +23,7 @@ public class ArrayDemo1 {
         // Arrays.toString() 將陣列轉換成字串印出
         // 使用情境: 快速檢視目前陣列最新內容
         System.out.println(Arrays.toString(scores));
+        // 直接印出 scores
+        System.out.println(scores);
     }
 }
