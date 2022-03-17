@@ -10,5 +10,16 @@ public class AccountMain4 {
         act2.deposit(1000);
         act1.print();
         act2.print();
+        // 轉帳
+        System.out.println("轉帳");
+        act1.transfer(300, act2);
+        act1.print();
+        act2.print();
+        // 轉帳2
+        System.out.println("轉帳2");
+        Account.transfer(700, act2, act1);
+        act1.print();
+        act2.print();
+        
     }
 }
