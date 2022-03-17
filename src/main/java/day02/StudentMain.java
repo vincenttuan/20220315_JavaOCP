@@ -14,5 +14,11 @@ public class StudentMain {
         s2.setWeight(45);
         s2.setScore(90);
         s2.print();
+        Student s3 = new Student();
+        s3.setName("Helen");
+        s3.setHeight(500);
+        s3.setWeight(-30);
+        s3.setScore(-600);
+        s3.print();
     }
 }
