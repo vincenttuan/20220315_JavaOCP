@@ -8,6 +8,9 @@ public class StringDemo {
         System.out.println(s1.equals(s2)); // 有區分大小寫
         System.out.println(s1.equals(s3));
         System.out.println(s1.equalsIgnoreCase(s3)); // 不區分大小寫
-        
+        String s4 = "Java";
+        String s5 = "Java";
+        System.out.println(s4 == s5);
+        System.out.println(s4.equals(s5));
     }
 }
