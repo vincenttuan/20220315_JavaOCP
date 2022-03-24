@@ -11,7 +11,10 @@ public class MultiArrayDemo3 {
     }
     // 預設資料
     public static void init(String[][] multiArray) {
-        
+        multiArray[0][0] = "X";
+        multiArray[0][2] = "O";
+        multiArray[1][1] = "O";
+        multiArray[2][2] = "X";
     }
     
     // 清盤
