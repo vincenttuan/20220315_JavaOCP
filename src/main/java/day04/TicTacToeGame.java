@@ -34,6 +34,36 @@ public class TicTacToeGame {
         }
     }
     
+    // 判斷贏家
+    public static boolean checkWinner(String mark) { // mark 是 O 或 X
+        String marks = mark + mark + mark;
+        // 是否有贏家
+        if((ttt[0][0]+ttt[0][1]+ttt[0][2]).equals(marks) || 
+           (ttt[1][0]+ttt[1][1]+ttt[1][2]).equals(marks) ||
+           (ttt[2][0]+ttt[2][1]+ttt[2][2]).equals(marks) ||
+                
+           (ttt[0][0]+ttt[1][0]+ttt[2][0]).equals(marks) ||
+           (ttt[0][1]+ttt[1][1]+ttt[2][1]).equals(marks) ||
+           (ttt[0][2]+ttt[1][2]+ttt[2][2]).equals(marks) ||
+                
+           (ttt[0][0]+ttt[1][1]+ttt[2][2]).equals(marks) ||
+           (ttt[0][2]+ttt[1][1]+ttt[2][0]).equals(marks)) {
+            System.out.printf("% 贏了\n", mark.equals("O")?"User":"PC");
+            return true; // 有贏家 (停止遊戲)
+        }
+        // 是否和局 ?
+        // 有沒有找到 " " 的資料
+        for(String[] row : ttt) {
+            for(String value : row) {
+                if(value.equals(" ")) {
+                    return false; // 沒有贏家
+                }
+            }
+        }
+        System.out.println("和局");
+        return true; // 和局
+    }
+    
     // 遊戲主體
     public static void gameLoop() {
         do {            
@@ -42,9 +72,11 @@ public class TicTacToeGame {
             // user do it
             userDoIt();
             // check winner ?
+            checkWinner("O");
             // pc do it
             pcDoIt();
             // check winner ?
+            checkWinner("X");
         } while (true);
     }
     
