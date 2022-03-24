@@ -48,7 +48,7 @@ public class TicTacToeGame {
                 
            (ttt[0][0]+ttt[1][1]+ttt[2][2]).equals(marks) ||
            (ttt[0][2]+ttt[1][1]+ttt[2][0]).equals(marks)) {
-            System.out.printf("% 贏了\n", mark.equals("O")?"User":"PC");
+            System.out.printf("%s 贏了\n", mark.equals("O")?"User":"PC");
             return true; // 有贏家 (停止遊戲)
         }
         // 是否和局 ?
@@ -72,11 +72,15 @@ public class TicTacToeGame {
             // user do it
             userDoIt();
             // check winner ?
-            checkWinner("O");
+            if(checkWinner("O")) { // 若有贏家或和局
+               break; 
+            }
             // pc do it
             pcDoIt();
             // check winner ?
-            checkWinner("X");
+            if(checkWinner("X")) {
+                break;
+            }
         } while (true);
     }
     
