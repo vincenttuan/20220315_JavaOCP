@@ -23,8 +23,12 @@ public class MultiArrayDemo2 {
         // 利用 for loop 配置
         for(int i=0;i<scores.length;i++) {
             for(int k=0;k<scores[i].length;k++) {
+                scores[i][k] = r.nextInt(100);
                 System.out.printf("scores[%d][%d] = %d\n", i, k, scores[i][k]);
             }
+        }
+        for(int [] score : scores) {
+            System.out.println(Arrays.toString(score));
         }
     }
 }
