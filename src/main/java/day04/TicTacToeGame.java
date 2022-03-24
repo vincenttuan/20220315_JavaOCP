@@ -73,12 +73,14 @@ public class TicTacToeGame {
             userDoIt();
             // check winner ?
             if(checkWinner("O")) { // 若有贏家或和局
-               break; 
+                print();
+                break; 
             }
             // pc do it
             pcDoIt();
             // check winner ?
             if(checkWinner("X")) {
+                print();
                 break;
             }
         } while (true);
