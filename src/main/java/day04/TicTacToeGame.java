@@ -9,11 +9,13 @@ import java.util.Scanner;
 public class TicTacToeGame {
     // 棋盤
     static String[][] ttt = new String[3][3];
-            
+    
+    // 主程式
     public static void main(String[] args) {
         start();
     }
     
+    // User 玩
     public static void userDoIt() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("請 User 輸入位置:");
@@ -21,6 +23,7 @@ public class TicTacToeGame {
         ttt[x/3][x%3] = "O";
     }
     
+    // PC 玩
     public static void pcDoIt() {
         System.out.print("請 PC 輸入位置:");
         while (true) {            
