@@ -34,7 +34,9 @@ public class McDonalds {
         hamburger2.setBeef(beef1);
         hamburger2.setBread(bread2);
         System.out.println(hamburger2);
-        
+        // 透過 hamburger2.getPrice(); 求出總價
+        int sum2 = hamburger2.getPrice();
+        System.out.printf("%s 總價:%d\n", hamburger2.getName(), sum2);
         
     }
 }

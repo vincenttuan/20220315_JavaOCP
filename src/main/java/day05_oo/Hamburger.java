@@ -53,7 +53,17 @@ public class Hamburger {
     }
 
     public Integer getPrice() {
-        int sum = price + bread.getPrice() + beef.getPrice() + cheese.getPrice();
+        //int sum = price + bread.getPrice() + beef.getPrice() + cheese.getPrice();
+        int sum = price;
+        if(bread != null) {
+            sum += bread.getPrice();
+        }
+        if(beef != null) {
+            sum += beef.getPrice();
+        }
+        if(cheese != null) {
+            sum += cheese.getPrice();
+        }
         return sum;
     }
 
