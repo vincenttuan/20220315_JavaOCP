@@ -53,7 +53,8 @@ public class Hamburger {
     }
 
     public Integer getPrice() {
-        return price;
+        int sum = price + bread.getPrice() + beef.getPrice() + cheese.getPrice();
+        return sum;
     }
 
     public void setPrice(Integer price) {

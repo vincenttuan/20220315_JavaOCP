@@ -26,10 +26,7 @@ public class McDonalds {
         hamburger.setCheese(cheese1);
         hamburger.setBread(bread2);
         System.out.println(hamburger);
-        int sum = hamburger.getPrice() + 
-                hamburger.getBeef().getPrice() +
-                hamburger.getCheese().getPrice() +
-                hamburger.getBread().getPrice();
+        int sum = hamburger.getPrice();
         System.out.printf("%s 總價:%d\n", hamburger.getName(), sum);
     }
 }
