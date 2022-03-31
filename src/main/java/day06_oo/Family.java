@@ -1,5 +1,5 @@
 package day06_oo;
-
+// 父子類建構子調用
 class Father {
     Father() {
         System.out.println("F1");
