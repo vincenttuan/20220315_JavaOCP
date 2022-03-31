@@ -8,7 +8,9 @@ public class Student extends Person {
     }
     
     public Student(String name, Integer age, Integer score) {
-        
+        setName(name);   // super.setName(name);
+        setAge(age);     // super.setAge(age);
+        setScore(score); // this.setScore(score);
     }
     
     public Integer getScore() {

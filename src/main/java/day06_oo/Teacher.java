@@ -8,7 +8,9 @@ public class Teacher extends Person {
     }
     
     public Teacher(String name, Integer age, Integer salary) {
-        
+        super.setName(name);
+        super.setAge(age);
+        this.setSalary(salary);
     }
     
     public Integer getSalary() {
