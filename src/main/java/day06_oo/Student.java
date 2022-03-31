@@ -2,7 +2,15 @@ package day06_oo;
 
 public class Student extends Person {
     private Integer score;
-
+    
+    public Student() {
+    
+    }
+    
+    public Student(String name, Integer age, Integer score) {
+        
+    }
+    
     public Integer getScore() {
         return score;
     }

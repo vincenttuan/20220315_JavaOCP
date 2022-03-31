@@ -2,7 +2,15 @@ package day06_oo;
 
 public class Teacher extends Person {
     private Integer salary;
-
+    
+    public Teacher() {
+    
+    }
+    
+    public Teacher(String name, Integer age, Integer salary) {
+        
+    }
+    
     public Integer getSalary() {
         return salary;
     }
