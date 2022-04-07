@@ -41,5 +41,17 @@ public class AutoBoxingUnBoxing2 {
                             .average()
                             .getAsDouble();
         System.out.println(avg4);
+        // 動動腦
+        Object[] names = {"Vincent", 5566, "Jo"};
+        // 請問平均名字有幾個字 ?
+        double avg5 = Stream.of(names)
+                            .map(Object::toString) // Stream<Object>
+                            //.mapToInt(n -> n.length()) // String::length
+                            .mapToInt(String::length) // IntStream
+                            .average()
+                            .getAsDouble();
+        System.out.println(avg5);
+                            
+        
     }
 }
