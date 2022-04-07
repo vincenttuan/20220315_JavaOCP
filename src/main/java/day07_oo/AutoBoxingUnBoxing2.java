@@ -26,5 +26,20 @@ public class AutoBoxingUnBoxing2 {
                             .average()
                             .getAsDouble();
         System.out.println(avg2);
+        Object[] values = {"100", 93, 81.5, new Integer(75)};
+        // 求平均 = ?
+        double avg3 = Stream.of(values)
+                            .map(Object::toString)
+                            .mapToDouble(Double::parseDouble)
+                            .average()
+                            .getAsDouble();
+        System.out.println(avg3);
+        double avg4 = Stream.of(values)
+                            .map(Object::toString)
+                            .map(Double::valueOf)
+                            .mapToDouble(Double::doubleValue)
+                            .average()
+                            .getAsDouble();
+        System.out.println(avg4);
     }
 }
