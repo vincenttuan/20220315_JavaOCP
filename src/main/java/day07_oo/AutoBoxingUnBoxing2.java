@@ -12,8 +12,19 @@ public class AutoBoxingUnBoxing2 {
         System.out.println(sum2);
         System.out.println(sum3);
         
-        String[] nums = {"100", "93", "81"};
+        Object[] nums = {"100", 93, "81"};
         // 求平均 = ?
-        
+        double avg = Stream.of(nums) // Stream<Object>
+                           .map(n -> n.toString()) // Stream<String>
+                           .mapToInt(n -> Integer.parseInt(n)) // IntStream
+                           .average()
+                           .getAsDouble();
+        System.out.println(avg);
+        double avg2 = Stream.of(nums) // Stream<Object>
+                            .map(Object::toString) // Stream<String>
+                            .mapToInt(Integer::parseInt) // IntStream
+                            .average()
+                            .getAsDouble();
+        System.out.println(avg2);
     }
 }
