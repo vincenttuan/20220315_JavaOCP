@@ -34,6 +34,13 @@ public class PersonMain2 {
                 System.out.println(student.getScore());
             }
         }
+        for(Person person : people) {
+            //System.out.println((person instanceof Student) + ":" + person.getClass());
+            if(person instanceof Student) {
+                Student student = (Student)person; // 將 person 轉型成 Student
+                System.out.println(student.getScore());
+            }
+        }
         
     }
 }
