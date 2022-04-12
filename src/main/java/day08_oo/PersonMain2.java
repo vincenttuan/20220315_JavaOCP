@@ -24,7 +24,16 @@ public class PersonMain2 {
                 .getAsDouble();
         System.out.println(avgOfAge);
         // 3. 印出所有學生分數 = ?
-        
+        for(Person person : people) {
+            // 判斷 person 是不是學生 ?
+            //System.out.println(person.getClass());
+            //System.out.println(person.getClass().getSimpleName());
+            //System.out.println(person.getClass().getSimpleName().equals("Student"));
+            if(person.getClass().getSimpleName().equals("Student")) {
+                Student student = (Student)person; // 將 person 轉型成 Student
+                System.out.println(student.getScore());
+            }
+        }
         
     }
 }
