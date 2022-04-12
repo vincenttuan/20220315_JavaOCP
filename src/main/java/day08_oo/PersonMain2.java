@@ -41,6 +41,11 @@ public class PersonMain2 {
                 System.out.println(student.getScore());
             }
         }
-        
+        // 4. 印出所有學生分數(使用 Java 8) = ?
+        Arrays.stream(people)
+                .filter(person -> person instanceof Student) // 過濾 Student
+                .map(person -> (Student)person) // 轉為 Student 型別
+                .forEach(student -> System.out.println(student.getScore()));
+        // 5. 請求出老師的平均薪資(使用 Java 8) = ?
     }
 }
