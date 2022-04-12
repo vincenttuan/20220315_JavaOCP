@@ -47,5 +47,12 @@ public class PersonMain2 {
                 .map(person -> (Student)person) // 轉為 Student 型別
                 .forEach(student -> System.out.println(student.getScore()));
         // 5. 請求出老師的平均薪資(使用 Java 8) = ?
+        double avgOfSalary = Arrays.stream(people)
+                .filter(person -> person instanceof Teacher)
+                .map(person -> (Teacher)person)
+                .mapToInt(Teacher::getSalary)
+                .average()
+                .getAsDouble();
+        System.out.println(avgOfSalary);
     }
 }
