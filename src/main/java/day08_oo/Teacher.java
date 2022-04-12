@@ -1,6 +1,6 @@
 package day08_oo;
 
-public class Teacher {
+public class Teacher extends Person {
     private int salary;
 
     public int getSalary() {
