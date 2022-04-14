@@ -5,4 +5,7 @@ public class Animal {
     void move() {
         System.out.println("我會動");
     }
+    int getLegs() {
+        return legs;
+    }
 }

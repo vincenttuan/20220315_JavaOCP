@@ -5,4 +5,7 @@ public class Bird extends Animal {
     void move() {
         System.out.println("我會飛");
     }
+    int getLegs() {
+        return legs;
+    }
 }
