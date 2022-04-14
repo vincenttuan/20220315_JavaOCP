@@ -7,7 +7,12 @@ public class Greet2 extends Hello {
     public void accessHello() {
         Greet2 hello = new Greet2();
         System.out.println(hello.a);
-        System.out.println(hello.b); // 可呼叫 Hello protected 方法
+        System.out.println(hello.b);
+        
+        //Hello hello = new Greet2();
+        //System.out.println(hello.a);
+        //System.out.println(((Greet2)hello).b);
+        
         //System.out.println(hello.c); // 不可呼叫 Hello 預設 方法
         //System.out.println(hello.d); // 不可呼叫 Hello private 方法
     }
