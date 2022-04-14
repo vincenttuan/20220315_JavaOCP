@@ -21,6 +21,11 @@ public class Army {
         
         Object[] objects = {car1, car2, w1, w2, w3};
         // 總共馬力是多少 ? 
-        
+        sum = Stream.of(objects)
+                .filter(object -> object instanceof Car)
+                .map(object -> (Car)object)
+                .mapToInt(Car::getPower)
+                .sum();
+        System.out.println(sum);
     }
 }
