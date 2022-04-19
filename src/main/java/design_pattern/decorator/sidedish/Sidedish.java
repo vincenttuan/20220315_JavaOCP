@@ -1,14 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package design_pattern.decorator.sidedish;
 
-/**
- *
- * @author MB-teacher
- */
-public class Sidedish {
+import design_pattern.decorator.Food;
+
+public class Sidedish extends Food {
+    protected Food food;
+    
+    public Sidedish(Food food) {
+        this.food = food;
+    }
+
+    @Override
+    public String getName() {
+        return name + " + " + food.getName();
+    }
+
+    @Override
+    public int getPrice() {
+        return price + food.getPrice();
+    }
     
 }

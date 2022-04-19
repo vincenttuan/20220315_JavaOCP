@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package design_pattern.decorator.sidedish;
 
-/**
- *
- * @author MB-teacher
- */
-public class Ham {
+import design_pattern.decorator.Food;
+
+public class Ham extends Sidedish {
+    
+    public Ham(Food food) {
+        super(food);
+        name = "火腿";
+        price = 10;
+    }
     
 }
