@@ -4,6 +4,9 @@ import java.util.stream.Stream;
 
 public class PetStore {
     public static void main(String[] args) {
+        //Dog d1 = new Dog(); // interface 介面不可"直接" new
+        //Dog d2 = new AbstractDog(); // abstract class 抽象類別也不可"直接" new
+        
         Dog dog1 = new Shiba();
         Dog dog2 = new Chihuahua();
         Dog dog3 = new EDog();
