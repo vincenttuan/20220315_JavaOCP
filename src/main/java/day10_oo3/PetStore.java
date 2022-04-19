@@ -23,5 +23,12 @@ public class PetStore {
             dog.eat();
         });
         
+        AbstractCat[] cats = {new PersianCat(), new SiameseCat()};
+        Stream.of(cats).forEach(cat -> {
+            cat.eat();
+            cat.skill();
+        });
+        
+        
     }
 }
