@@ -1,5 +1,9 @@
 package design_pattern.decorator;
 
-public class Food {
+public abstract class Food {
+    protected String name;
+    protected int price;
     
+    public abstract String getName();
+    public abstract int getPrice();
 }
