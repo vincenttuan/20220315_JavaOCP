@@ -24,6 +24,18 @@ public class PetStore {
         });
         
         AbstractCat[] cats = {new PersianCat(), new SiameseCat()};
+        // Java 5 以前
+        for(int i=0;i<cats.length;i++) {
+            AbstractCat cat = cats[i];
+            cat.eat();
+            cat.skill();
+        }
+        // Java 5 ~ 7 的寫法
+        for(AbstractCat cat : cats) {
+            cat.eat();
+            cat.skill();
+        }
+        // Java 8
         Stream.of(cats).forEach(cat -> {
             cat.eat();
             cat.skill();
