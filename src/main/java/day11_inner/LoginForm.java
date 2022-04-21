@@ -11,6 +11,7 @@ public class LoginForm {
     // 內部類別(按鈕)
     public class Button {
         private String title = "傳送"; // 按鈕抬頭
+        //static int width = 200; // 屬性不可加入 static 修飾
         // 行為
         public void action() {
             String title = "驗證成功"; // 行為抬頭
