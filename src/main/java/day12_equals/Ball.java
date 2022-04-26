@@ -9,6 +9,17 @@ public class Ball {
         this.price = price;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        Ball b = (Ball)obj;
+        if(b.price == price && b.color.equals(color)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    
     public String getColor() {
         return color;
     }
