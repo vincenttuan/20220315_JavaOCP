@@ -11,6 +11,17 @@ public class Ball {
 
     @Override
     public boolean equals(Object obj) {
+        // this 與 obj 根本就是同一個物件
+        if(this == obj) {
+            return true;
+        }
+        
+        // 判斷是否可轉型 ?
+        if(!(obj instanceof Ball)) {
+            System.out.println("不可轉型");
+            return false;
+        }
+        
         Ball b = (Ball)obj;
         if(b.price == price && b.color.equals(color)) {
             return true;
