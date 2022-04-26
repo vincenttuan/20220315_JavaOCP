@@ -8,6 +8,11 @@ public class Ball {
         this.color = color;
         this.price = price;
     }
+
+    @Override
+    public int hashCode() {
+        return 7;
+    }
     
     @Override
     public boolean equals(Object obj) {
