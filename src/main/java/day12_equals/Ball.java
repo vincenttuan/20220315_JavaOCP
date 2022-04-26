@@ -8,7 +8,7 @@ public class Ball {
         this.color = color;
         this.price = price;
     }
-
+    
     @Override
     public boolean equals(Object obj) {
         // this 與 obj 根本就是同一個物件
