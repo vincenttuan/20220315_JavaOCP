@@ -12,5 +12,9 @@ public class MyOuterMain {
         MyOuter.MyStaticInner sin = new MyOuter.MyStaticInner();
         sin.foo();
         sin.bar();
+        
+        MyOuter.MyStaticInner sin2 = new MyOuter.MyStaticInner();
+        sin2.foo();
+        sin2.bar();
     }
 }
