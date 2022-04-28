@@ -2,6 +2,8 @@ package day13_set;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import static java.util.stream.Collectors.toSet;
 
 
@@ -37,11 +39,22 @@ public class SetDemoExam {
         }
         System.out.println(subjects);
         
-        // 請求出最高分的科目 = ? Java 8
+        // 請求出最高分的科目 = ? Java 8  Part I
         Set<String> subjects2 =  exams.stream()
                                       .filter(exam -> exam.getScore() == max)
                                       .map(exam -> exam.getSubject()) // ["國文", "數學"] stream 型態
                                       .collect(toSet()); // 轉 Set 集合
         System.out.println(subjects2);
+        
+        // 請求出最高分的科目 = ? Java 8 Part II
+        // filter(Predicate)
+        // map(Function)
+        Predicate<Exam> hightScoreFilter = exam -> exam.getScore() == max;
+        Function<Exam, String> mapToSubject = exam -> exam.getSubject();
+        Set<String> subjects3 =  exams.stream()
+                                      .filter(hightScoreFilter)
+                                      .map(mapToSubject)
+                                      .collect(toSet());
+        System.out.println(subjects3);
     }
 }
