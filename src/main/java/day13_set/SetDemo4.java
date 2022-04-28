@@ -6,7 +6,6 @@ import java.util.Iterator;
 public class SetDemo4 {
     public static void main(String[] args) {
         // 集合與泛型
-        //Set<? extends Number> dataSet = new HashSet<Integer>();
         Set<Integer> dataSet = new HashSet<>();
         dataSet.add(Integer.valueOf(100)); // Integer
         dataSet.add(70); // Integer (auto-boxing)
