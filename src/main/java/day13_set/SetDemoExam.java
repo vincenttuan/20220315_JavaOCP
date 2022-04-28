@@ -40,8 +40,8 @@ public class SetDemoExam {
         // 請求出最高分的科目 = ? Java 8
         Set<String> subjects2 =  exams.stream()
                                       .filter(exam -> exam.getScore() == max)
-                                      .map(exam -> exam.getSubject()) // ["國文", "數學"]
+                                      .map(exam -> exam.getSubject()) // ["國文", "數學"] stream 型態
                                       .collect(toSet()); // 轉 Set 集合
-        
+        System.out.println(subjects2);
     }
 }
