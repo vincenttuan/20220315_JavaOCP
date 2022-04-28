@@ -2,7 +2,7 @@ package day13_set;
 
 import java.util.Objects;
 
-public class Exam {
+public class Exam implements Comparable<Exam> {
     private String subject; // 科目
     private Integer score; // 分數
 
@@ -61,6 +61,12 @@ public class Exam {
     @Override
     public String toString() {
         return "Exam{" + "subject=" + subject + ", score=" + score + '}';
+    }
+
+    @Override
+    public int compareTo(Exam other) {
+        //return score - other.score; // 小到大
+        return other.score - score; // 大到小
     }
     
     
