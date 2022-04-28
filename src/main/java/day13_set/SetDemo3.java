@@ -1,7 +1,7 @@
 package day13_set;
 import java.util.Set;
 import java.util.HashSet;
-import java.util.Iterator;
+
 public class SetDemo3 {
     public static void main(String[] args) {
         Set dataSet = new HashSet();
