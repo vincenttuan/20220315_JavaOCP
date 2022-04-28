@@ -12,6 +12,19 @@ public class SetDemo2 {
         dataSet.add("數學"); // String
         dataSet.add(90); // Integer (auto-boxing)
         System.out.println(dataSet);
+        // dataSet : [100, 國文, 英文, 70, 90, 數學]
+        // 請計算總分
+        Iterator iter = dataSet.iterator();
+        int sum = 0;
+        while (iter.hasNext()) {
+            Object next = iter.next();
+            // 判斷是否是 Integer 資料型別
+            if(next instanceof Integer) {
+                // 轉型成 Integer 並相加
+                sum += (Integer)next;
+            }
+        }
+        System.out.println(sum);
         
     }
 }
