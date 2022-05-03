@@ -29,5 +29,8 @@ public class LinkedListDemo {
             Integer previous = iter.previous();
             System.out.printf("%d : %d\n", index, previous);
         }
+        // Java 8 輪詢資料
+        scores.forEach(score -> System.out.println(score));
+        scores.forEach(System.out::println);
     }
 }
