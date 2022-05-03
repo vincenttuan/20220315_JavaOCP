@@ -14,7 +14,20 @@ public class LinkedListDemo3 {
         Exam e6 = new Exam("VB", 90);
         List<Exam> exams = Arrays.asList(e1, e2, e3, e4, e5, e6);
         // 試問 Java 與 VB 的平均分數各是多少?
+        double avgOfJava = exams.stream()
+                .filter(e -> e.getSubject().equals("Java"))
+                .mapToInt(Exam::getScore) // e -> e.getScore()
+                .average()
+                .getAsDouble();
         
+        double avgOfVB = exams.stream()
+                .filter(e -> e.getSubject().equals("VB"))
+                .mapToInt(Exam::getScore) // e -> e.getScore()
+                .average()
+                .getAsDouble();
+        
+        System.out.printf("Java: %.1f\n", avgOfJava);
+        System.out.printf("VB: %.1f\n", avgOfVB);
     }
     
 }
