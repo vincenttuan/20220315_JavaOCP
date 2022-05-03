@@ -17,5 +17,20 @@ public class ListGetAndRemove {
         //nums.remove("3");
         nums.remove(1);
         System.out.println(nums);
+        //-------------------------------
+        System.out.println("-------------------");
+        List<Integer> scores = new ArrayList<>();
+        scores.add(0); // 0
+        scores.add(3); // 1
+        scores.add(2); // 2
+        scores.add(1); // 3
+        System.out.println(scores);
+        // 取得 index = 2 的資料
+        System.out.println(scores.get(2));
+        // 移除內容 = 3 的資料
+        scores.remove(Integer.valueOf(3));
+        // 移除 index = 3 的資料
+        //scores.remove(3);
+        System.out.println(scores);
     }
 }
