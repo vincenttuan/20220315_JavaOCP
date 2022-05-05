@@ -3,12 +3,15 @@ package day15_map;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.summingInt;
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.toSet;
 
 public class MapDemo3 {
     public static void main(String[] args) {
@@ -43,6 +46,17 @@ public class MapDemo3 {
                 .map(array -> new Fruit(array))
                 .collect(groupingBy(Fruit::getName, summingInt(Fruit::getCount)));
         System.out.println(resultMap3);
-        
+        //----------------------------------------------------------------
+        // 根據水果價格來分組
+        Map<Double, List<Fruit>> resultMap4 = Arrays.stream(fruits)
+                .map(array -> new Fruit(array))
+                .collect(groupingBy(Fruit::getPrice));
+        System.out.println(resultMap4);
+        //----------------------------------------------------------------
+        // 根據水果價格來分組 II
+        Map<Double, Set<String>> resultMap5 = Arrays.stream(fruits)
+                .map(array -> new Fruit(array))
+                .collect(groupingBy(Fruit::getPrice, mapping(Fruit::getName, toSet())));
+        System.out.println(resultMap5);
     }
 }
