@@ -17,6 +17,12 @@ public class Fruit {
         this.price = Double.parseDouble(price);
     }
     
+    public Fruit(String[] rows) {
+        this.name = rows[0];
+        this.count = Integer.parseInt(rows[1]);
+        this.price = Double.parseDouble(rows[2]);
+    }
+    
     public String getName() {
         return name;
     }
