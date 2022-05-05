@@ -58,5 +58,12 @@ public class MapDemo3 {
                 .map(array -> new Fruit(array))
                 .collect(groupingBy(Fruit::getPrice, mapping(Fruit::getName, toSet())));
         System.out.println(resultMap5);
+        //----------------------------------------------------------------
+        // 請問 fruits 這個貨櫃總金額為何 ?
+        double total = Arrays.stream(fruits)
+                .map(array -> new Fruit(array))
+                .mapToDouble(fruit -> fruit.getCount() * fruit.getPrice())
+                .sum();
+        System.out.println(total);
     }
 }
