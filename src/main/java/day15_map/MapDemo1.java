@@ -2,6 +2,7 @@ package day15_map;
 
 import java.util.Collection;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -16,8 +17,8 @@ public class MapDemo1 {
         people.put("Jo", 17);
         System.out.println(people);
         // 取出某人的年齡
-        Integer age = people.get("Bob");
-        System.out.println(age);
+        Integer ageOfPerson = people.get("Bob");
+        System.out.println(ageOfPerson);
         // 取出所有的人名
         Set<String> names = people.keySet();
         System.out.println(names);
@@ -26,6 +27,22 @@ public class MapDemo1 {
         System.out.println(values);
         // 每個年齡層有幾個人 ?
         // {16=1, 17=2, 18=2} <- Map 的資料呈現
-        
+        // Java 7
+        // 先把總共有幾種年齡層找出
+        Set<Integer> allOfAge = new LinkedHashSet<>(values);
+        System.out.println("allOfAge: " + allOfAge);
+        // resultMap 存放統計資料
+        Map<Integer, Integer> resultMap = new LinkedHashMap<>();
+        for(int age : allOfAge) {
+            int count = 0;
+            for(int value : values) { // values 所有年齡的集合
+                if(age == value) { // 資料比對
+                    count++;
+                }
+            }
+            resultMap.put(age, count); // 將統計結果放到 resultMap 集合中
+        }
+        System.out.println(resultMap);
+        // Java 8
     }
 }
