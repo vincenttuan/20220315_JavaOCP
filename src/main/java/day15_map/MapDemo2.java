@@ -16,8 +16,7 @@ public class MapDemo2 {
         Map<String, Long> resultMap = Arrays.stream(fruits)
                 //.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
                 .collect(groupingBy(identity(), counting()));
+                
         System.out.println(resultMap);
-        
-        
     }
 }
