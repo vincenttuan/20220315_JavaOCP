@@ -16,6 +16,7 @@ public class MapDemo5 {
         people.put("Jo", 17);
         System.out.println(people);
         //--------------------------------------------------------------
+        Fruit.order = Order.PRICE;
         TreeMap<Fruit, String> fruits = new TreeMap<>();
         fruits.put(new Fruit("apple", 100, 1.99), "梨山");
         fruits.put(new Fruit("watermelon", 200, 3.99), "花蓮");
