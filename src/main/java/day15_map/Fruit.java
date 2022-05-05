@@ -10,7 +10,13 @@ public class Fruit {
         this.count = count;
         this.price = price;
     }
-
+    
+    public Fruit(String name, String count, String price) {
+        this.name = name;
+        this.count = Integer.parseInt(count);
+        this.price = Double.parseDouble(price);
+    }
+    
     public String getName() {
         return name;
     }
