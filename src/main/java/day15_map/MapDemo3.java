@@ -1,6 +1,7 @@
 package day15_map;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -22,6 +23,17 @@ public class MapDemo3 {
         };
         // 試問每一種水果各有幾箱?
         // 結果範例: {apple=4, watermelon=2, orange=1, banana=1}
-        
+        List<Fruit> list = Arrays.stream(fruits)
+                .map(array -> new Fruit(array))
+                .collect(Collectors.toList());
+        System.out.println(list);
+        Map<String, Long> resultMap1 = list.stream()
+                .collect(groupingBy(fruit -> fruit.getName(), counting()));
+        System.out.println(resultMap1);
+        //----------------------------------------------------------------
+        Map<String, Long> resultMap2 = Arrays.stream(fruits)
+                .map(array -> new Fruit(array))
+                .collect(groupingBy(fruit -> fruit.getName(), counting()));
+        System.out.println(resultMap2);
     }
 }
