@@ -17,6 +17,8 @@ public class MapDemo5 {
         System.out.println(people);
         //--------------------------------------------------------------
         Fruit.order = Order.PRICE;
+        // 注意: 在 TreeMap 中若有相同價格, 則只會出現一個水果元素
+        // 例如: apple 與 papaya 都是 1.99 , 則 fruits 集合中只會出現 apple
         TreeMap<Fruit, String> fruits = new TreeMap<>();
         fruits.put(new Fruit("apple", 100, 1.99), "梨山");
         fruits.put(new Fruit("watermelon", 200, 3.99), "花蓮");
