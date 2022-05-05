@@ -11,16 +11,14 @@ public class Fruit {
         this.price = price;
     }
     
-    public Fruit(String name, String count, String price) {
+    private Fruit(String name, String count, String price) {
         this.name = name;
         this.count = Integer.parseInt(count);
         this.price = Double.parseDouble(price);
     }
     
     public Fruit(String[] rows) {
-        this.name = rows[0];
-        this.count = Integer.parseInt(rows[1]);
-        this.price = Double.parseDouble(rows[2]);
+        this(rows[0], rows[1], rows[2]);
     }
     
     public String getName() {
