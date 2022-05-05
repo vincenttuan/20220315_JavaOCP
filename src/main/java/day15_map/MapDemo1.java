@@ -5,6 +5,8 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class MapDemo1 {
     public static void main(String[] args) {
@@ -43,6 +45,14 @@ public class MapDemo1 {
             resultMap.put(age, count); // 將統計結果放到 resultMap 集合中
         }
         System.out.println(resultMap);
-        // Java 8
+        // Java 8 
+        // values 所有年齡的集合: [18, 17, 16, 18, 17]
+        // collect: 收集
+        // Collectors.groupingBy: 分組
+        // 每一個元素資料叫做: Function.identity()
+        // Collectors.counting() 可將同類分組的資料累計加總, 資料型別是 Long
+        Map<Integer, Long> resultMap2 = values.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(resultMap2);
     }
 }
