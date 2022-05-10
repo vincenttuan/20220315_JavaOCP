@@ -1,7 +1,6 @@
 package day16_collections;
 
-// 排序
-
+// 排序 List + 單一元素
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
