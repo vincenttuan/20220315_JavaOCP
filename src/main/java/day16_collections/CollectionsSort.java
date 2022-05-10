@@ -4,6 +4,7 @@ package day16_collections;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class CollectionsSort {
@@ -14,6 +15,8 @@ public class CollectionsSort {
         System.out.println(scores);
         // 2. 排序(二數相加, 自然排序 小->大)
         // 例如: 91->10, 85->13, 92->11, 69->15, 75->12
-        
+        Comparator<Integer> comp = (o1, o2) -> (o1/10+o1%10) - (o2/10+o2%10);
+        Collections.sort(scores, comp);
+        System.out.println(scores);
     }
 }
