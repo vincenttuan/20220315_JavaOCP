@@ -23,12 +23,13 @@ public class CollectionsSort {
         System.out.println(scores);
         // 3. 洗牌 shuffle
         Collections.shuffle(scores);
-        System.out.println(scores);
+        System.out.println("洗牌: " + scores);
         // 4. 透過 stream 來排序
         scores = scores.stream().sorted().collect(Collectors.toList());
         System.out.println(scores);
         scores = scores.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         System.out.println(scores);
-        
+        scores = scores.stream().sorted(Comparator.comparingInt(n -> n/10 + n%10)).collect(Collectors.toList());
+        System.out.println(scores);
     }
 }
