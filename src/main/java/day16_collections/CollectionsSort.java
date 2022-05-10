@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CollectionsSort {
     public static void main(String[] args) {
@@ -20,5 +21,14 @@ public class CollectionsSort {
         System.out.println(scores);
         Collections.sort(scores, comp.reversed()); // 反排序, 大 -> 小
         System.out.println(scores);
+        // 3. 洗牌 shuffle
+        Collections.shuffle(scores);
+        System.out.println(scores);
+        // 4. 透過 stream 來排序
+        scores = scores.stream().sorted().collect(Collectors.toList());
+        System.out.println(scores);
+        scores = scores.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        System.out.println(scores);
+        
     }
 }
