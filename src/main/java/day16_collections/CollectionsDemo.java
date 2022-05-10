@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CollectionsDemo {
     public static void main(String[] args) {
-        List<Integer> scores = Arrays.asList(91, 85, 92, 69, 74);
+        List<Integer> scores = Arrays.asList(91, 85, 92, 69, 75);
         // 取出最大值
         int max = Collections.max(scores);
         System.out.println(max);
