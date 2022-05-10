@@ -27,7 +27,8 @@ public class CollectionsSort4 {
         // 根據二數值相加排序
         Map<String, Integer> sortMap2 = new LinkedHashMap();
         unsortMap.entrySet().stream()
-                .sorted(Map.Entry.comparingByValue((a, b) ->(a.intValue()/10+a.intValue()%10)-(b.intValue()/10+b.intValue()%10) ))
+                //.sorted(Map.Entry.comparingByValue((a, b) ->(a.intValue()/10+a.intValue()%10)-(b.intValue()/10+b.intValue()%10) ))
+                .sorted(Map.Entry.comparingByValue(Comparator.comparing(a -> a/10+a%10)))
                 .forEachOrdered(e -> sortMap2.put(e.getKey(), e.getValue()));
         
         System.out.println(sortMap2);
