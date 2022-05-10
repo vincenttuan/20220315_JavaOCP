@@ -18,5 +18,7 @@ public class CollectionsSort {
         Comparator<Integer> comp = (o1, o2) -> (o1/10+o1%10) - (o2/10+o2%10);
         Collections.sort(scores, comp);
         System.out.println(scores);
+        Collections.sort(scores, comp.reversed()); // 反排序, 大 -> 小
+        System.out.println(scores);
     }
 }
