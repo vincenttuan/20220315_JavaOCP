@@ -1,7 +1,6 @@
 package day16_collections;
 
-// 排序 Map
-
+// 排序 Map 單一元素
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -19,10 +18,10 @@ public class CollectionsSort3 {
         
         Map<String, Integer> sortMap = unsortMap.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.naturalOrder()))
-                .collect(Collectors.toMap(Map.Entry::getKey, 
-                                          Map.Entry::getValue, 
-                                          (oldValue, newValue) -> oldValue, 
-                                          LinkedHashMap::new));
+                .collect(Collectors.toMap(Map.Entry::getKey, // 定義 key
+                                          Map.Entry::getValue, // 定義 value
+                                          (oldValue, newValue) -> oldValue, // 將元素放入到新集合
+                                          LinkedHashMap::new)); // 建立新集合(有順序性的)
         
         System.out.println(sortMap);
     }
