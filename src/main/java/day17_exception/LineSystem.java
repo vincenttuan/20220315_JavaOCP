@@ -5,7 +5,7 @@ public class LineSystem {
         LineService lineService = new LineService();
         int statusCode = 0;
         try {
-            statusCode = lineService.sendSticker("貼圖", 0, 0);
+            statusCode = lineService.sendSticker("貼圖", 11537, 52002753);
         } catch (Exception ex) {
             System.out.println(ex);
         }
