@@ -8,14 +8,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 
-public class Test {
+public class SendText {
     // 存取權杖
     private static final String TOKEN = "";
     // 發送位置
     private static final String LINE_NOTIFY_URL = "https://notify-api.line.me/api/notify";
     public static void main(String[] args) {
         // 1. 要發送的資料
-        String message = "Hello 哈囉! 我是海綿寶寶";
+        String message = "\nHello 哈囉! 我是海綿寶寶";
         // 2. 發送前設定
         byte[] postData = null;
         try {
