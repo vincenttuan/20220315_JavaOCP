@@ -52,18 +52,23 @@ public class LineService {
         int statusCode = lineNotify(postData);
         return statusCode;
     }
+    
     // 傳送文字 + 貼圖
-    public int sendSticker(String message, int packageId, int id) {
-        // 準備 postData 後進行發送
-        return 0;
+    public int sendSticker(String message, int packageId, int id) throws Exception {
+        byte[] postData = null;
+        // 範例: message=Hello&stickerPackageId=1&stickerId=113
+        postData = ("message=" + message + "&stickerPackageId=" + packageId + "&stickerId=" + id).getBytes("UTF-8");
+        System.out.println(Arrays.toString(postData));
+        int statusCode = lineNotify(postData);
+        return statusCode;
     }
+    
     // 傳送文字 + 網路圖片
-    public int sendWebImage(String message, String imageUrl) {
-        // 準備 postData 後進行發送
+    public int sendWebImage(String message, String imageUrl) throws Exception {
         return 0;
     }
     // 傳送文字 + 本地圖片
-    public int sendLocalImage(String message, File imageFile) {
+    public int sendLocalImage(String message, File imageFile) throws Exception {
         // 準備 postData 後進行發送
         return 0;
     }
