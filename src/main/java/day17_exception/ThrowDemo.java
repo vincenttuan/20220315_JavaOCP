@@ -6,6 +6,14 @@ public class ThrowDemo {
             System.out.println(calc(10, 0));
         } catch (Exception ex) {
             System.out.println(ex);
+            try {
+                // 要用 Line 回報給主管
+                LineService lineService = new LineService();
+                int statusCode = lineService.sendText(ex.getMessage());
+                System.out.println(statusCode);
+            } catch (Exception ex1) {
+                System.out.println(ex1);
+            }
         }
     }
     
