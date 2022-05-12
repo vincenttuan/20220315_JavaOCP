@@ -63,8 +63,14 @@ public class LineService {
     
     // 傳送文字 + 網路圖片
     public int sendWebImage(String message, String imageUrl) throws Exception {
-        return 0;
+        // 準備 postData 後進行發送
+        byte[] postData = null;
+        postData = ("message=" + message + "&imageThumbnail=" + imageUrl + "&imageFullsize=" + imageUrl).getBytes("UTF-8");
+        System.out.println(Arrays.toString(postData));
+        int statusCode = lineNotify(postData);
+        return statusCode;
     }
+    
     // 傳送文字 + 本地圖片
     public int sendLocalImage(String message, File imageFile) throws Exception {
         // 準備 postData 後進行發送
