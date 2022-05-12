@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 
-public class SendText2 {
+public class SendText3 {
     // 存取權杖
     private static final String TOKEN = "";
     // 發送位置
@@ -44,14 +44,8 @@ public class SendText2 {
                     System.out.println("發送成功");
                 }
             }
-        } catch (UnsupportedEncodingException ex) {
-            System.out.println("無法編碼:" + ex);
-            return;
-        } catch (MalformedURLException ex) {
-            System.out.println("請確認網址是否正確?" + ex);
-            return;
-        } catch (IOException ex) {
-            System.out.println("連線失敗或資料傳送失敗或資料回應有誤:" + ex);
+        } catch (Exception ex) {
+            System.out.println("有錯誤發生" + ex);
         }
     }
 }
