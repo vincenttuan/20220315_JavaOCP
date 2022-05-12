@@ -44,7 +44,7 @@ public class LineService {
     }
     
     // 傳送文字
-    public int sendText(String message) throws UnsupportedEncodingException, ProtocolException, IOException {
+    public int sendText(String message) throws Exception {
         // 準備 postData 後進行發送
         byte[] postData = null;
         postData = ("message=" + message).getBytes("UTF-8");
