@@ -2,9 +2,11 @@ package day17_exception;
 
 public class LoginException extends Exception {
 
-    public LoginException(String string) {
-        super(string);
+    public LoginException(String message) {
+        super(message);
     }
+
+    
     
     public void forgotPassword() {
         System.out.println("請輸入 email 來取得密碼");
