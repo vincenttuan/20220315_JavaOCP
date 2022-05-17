@@ -4,7 +4,7 @@ import day18.Calc;
 import junit.framework.Assert;
 import org.junit.Test;
 
-public class CalcTest {
+public class CalcTest2 {
     @Test
     public void test() {
         // 3A 測試
@@ -12,7 +12,7 @@ public class CalcTest {
         Calc calc = new Calc();
         int x = 5;
         int y = 2;
-        double expected = 2;
+        double expected = 2.5;
         
         // 2. Act 調用目標物件的方法
         double actual = calc.div(x, y);
