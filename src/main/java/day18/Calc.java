@@ -5,4 +5,5 @@ public class Calc {
         double result = (double)x / y;
         return result;
     }
+    
 }
