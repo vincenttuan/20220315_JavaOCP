@@ -7,9 +7,10 @@ import java.util.logging.Logger;
 public class SuperMario extends Thread {
     private Random r = new Random();
     public void run() {
+        int i, k = 0;
         gamploop:
-        for(int i = 1; i <= 8; i++) {
-            for(int k = 1; k <= 4; k++) {
+        for(i = 1; i <= 8; i++) {
+            for(k = 1; k <= 4; k++) {
                 System.out.printf("run %d - %d\t", i, k);
                 int timesleep = r.nextInt(1000);
                 System.out.printf("time: %s\n", timesleep);
@@ -29,6 +30,11 @@ public class SuperMario extends Thread {
                     continue gamploop;
                 }
             }
+        }
+        
+        // 救到公主遊戲結束
+        if(i == 8 && k == 4) {
+            System.out.println("救到公主 ! 遊戲結束 ~~");
         }
     }
 }
