@@ -9,7 +9,7 @@ public class Nintendo {
         Bubble bubble = new Bubble();
         KingKong kingKong = new KingKong();
         SuperMario superMario = new SuperMario();
-        Runnable pal = () -> System.out.println("仙劍奇俠傳");;
+        Runnable pal = () -> System.out.println("仙劍奇俠傳");
         // 主機
         Thread thread1 = new Thread(kingKong);
         Thread thread2 = new Thread(pal);
