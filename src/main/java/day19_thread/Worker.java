@@ -1,7 +1,16 @@
 package day19_thread;
 
 public class Worker extends Thread {
-
+    
+    public Worker() {
+    
+    }
+    
+    public Worker(String tName) {
+        // 改執行緒名稱
+        setName(tName);
+    }
+    
     @Override
     public void run() {
         job();
