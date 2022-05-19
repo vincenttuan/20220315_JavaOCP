@@ -33,7 +33,7 @@ public class SuperMario extends Thread {
         }
         
         // 救到公主遊戲結束
-        if(i == 8 && k == 4) {
+        if(i == 8+1 && k == 4+1) {
             System.out.println("救到公主 ! 遊戲結束 ~~");
         }
     }
