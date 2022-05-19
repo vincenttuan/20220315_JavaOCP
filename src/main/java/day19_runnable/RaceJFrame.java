@@ -21,11 +21,17 @@ public class RaceJFrame extends javax.swing.JFrame {
             while(turtle_bar.getValue() < turtle_bar.getMaximum()) {
                 turtle_bar.setValue(turtle_bar.getValue() + 1);
             }
+            if(winner_label.getText().equals("")) {
+                winner_label.setText("烏龜贏");
+            }
         };
         
         rabbit = () -> {
             while(rabbit_bar.getValue() <rabbit_bar.getMaximum()) {
                 rabbit_bar.setValue(rabbit_bar.getValue() + 1);
+            }
+            if(winner_label.getText().equals("")) {
+                winner_label.setText("兔子贏");
             }
         };
     }
@@ -45,6 +51,7 @@ public class RaceJFrame extends javax.swing.JFrame {
         rabbit_bar = new javax.swing.JProgressBar();
         start_button = new javax.swing.JButton();
         clear_button = new javax.swing.JButton();
+        winner_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("龜兔賽跑");
@@ -80,6 +87,10 @@ public class RaceJFrame extends javax.swing.JFrame {
             }
         });
 
+        winner_label.setFont(new java.awt.Font("微軟正黑體", 0, 24)); // NOI18N
+        winner_label.setForeground(new java.awt.Color(204, 0, 0));
+        winner_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,10 +98,12 @@ public class RaceJFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(start_button, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
-                        .addComponent(clear_button, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(clear_button, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71)
+                        .addComponent(winner_label, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(rabbit_label)
@@ -116,7 +129,8 @@ public class RaceJFrame extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(start_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(clear_button, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
+                    .addComponent(clear_button, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                    .addComponent(winner_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -135,6 +149,9 @@ public class RaceJFrame extends javax.swing.JFrame {
     private void clear_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_buttonActionPerformed
         start_button.setEnabled(true);
         clear_button.setEnabled(false);
+        turtle_bar.setValue(0);
+        rabbit_bar.setValue(0);
+        winner_label.setText("");
     }//GEN-LAST:event_clear_buttonActionPerformed
 
     /**
@@ -179,5 +196,6 @@ public class RaceJFrame extends javax.swing.JFrame {
     private javax.swing.JButton start_button;
     private javax.swing.JProgressBar turtle_bar;
     private javax.swing.JLabel turtle_label;
+    private javax.swing.JLabel winner_label;
     // End of variables declaration//GEN-END:variables
 }
