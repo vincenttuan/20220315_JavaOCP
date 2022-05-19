@@ -6,9 +6,11 @@ public class Worker extends Thread {
     
     }
     
-    public Worker(String tName) {
+    public Worker(String tName, int priority) {
         // 改執行緒名稱
         setName(tName);
+        // 改變權限
+        setPriority(priority);
     }
     
     @Override
