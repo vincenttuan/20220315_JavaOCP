@@ -73,6 +73,12 @@ public class RaceJFrame extends javax.swing.JFrame {
 
         clear_button.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         clear_button.setText("Clear");
+        clear_button.setEnabled(false);
+        clear_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clear_buttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,8 +124,18 @@ public class RaceJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void start_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_start_buttonActionPerformed
-        // TODO add your handling code here:
+        Thread turtle_thread = new Thread(turtle);
+        Thread rabbit_thread = new Thread(rabbit);
+        turtle_thread.start();
+        rabbit_thread.start();
+        start_button.setEnabled(false);
+        clear_button.setEnabled(true);
     }//GEN-LAST:event_start_buttonActionPerformed
+
+    private void clear_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_buttonActionPerformed
+        start_button.setEnabled(true);
+        clear_button.setEnabled(false);
+    }//GEN-LAST:event_clear_buttonActionPerformed
 
     /**
      * @param args the command line arguments
