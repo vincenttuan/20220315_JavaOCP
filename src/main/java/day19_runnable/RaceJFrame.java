@@ -140,6 +140,8 @@ public class RaceJFrame extends javax.swing.JFrame {
     private void start_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_start_buttonActionPerformed
         Thread turtle_thread = new Thread(turtle);
         Thread rabbit_thread = new Thread(rabbit);
+        //turtle_thread.setPriority(10);
+        //rabbit_thread.setPriority(1);
         turtle_thread.start();
         rabbit_thread.start();
         start_button.setEnabled(false);
