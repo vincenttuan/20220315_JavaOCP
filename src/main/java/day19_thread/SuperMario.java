@@ -23,6 +23,11 @@ public class SuperMario extends Thread {
                     System.out.println("GG");
                     break gamploop;
                 }
+                // 跳關邏輯
+                if(i < 8 && timesleep % 8 == 0) {
+                    i = 7;
+                    continue gamploop;
+                }
             }
         }
     }
