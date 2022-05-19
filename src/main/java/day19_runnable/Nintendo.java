@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package day19_runnable;
 
-/**
- *
- * @author MB-teacher
- */
 public class Nintendo {
-    
+    public static void main(String[] args) {
+        // 準備卡帶
+        Mario mario = new Mario();
+        Bubble bubble = new Bubble();
+        KingKong kingKong = new KingKong();
+        
+        Thread thread = new Thread();
+        thread.start();
+    }
 }
