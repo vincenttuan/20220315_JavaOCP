@@ -11,7 +11,7 @@ public class SuperMario extends Thread {
         for(int i = 1; i <= 8; i++) {
             for(int k = 1; k <= 4; k++) {
                 System.out.printf("run %d - %d\t", i, k);
-                int timesleep = r.nextInt(5000);
+                int timesleep = r.nextInt(2000);
                 System.out.printf("time: %s\n", timesleep);
                 try {
                     Thread.sleep(timesleep);
