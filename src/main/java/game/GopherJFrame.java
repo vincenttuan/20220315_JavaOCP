@@ -21,14 +21,17 @@ public class GopherJFrame extends javax.swing.JFrame {
     class Gopher extends Thread {
         Random random = new Random();
         JLabel hole;
+        int i=0;
         Gopher(JLabel hole) {
             this.hole = hole;
         }
         public void run() {
             try {
-                for(int i=0;i<movies1.length;i++) {
-                    hole.setIcon(new ImageIcon("src/main/java/game/" + movies1[i]));
-                    Thread.sleep(random.nextInt(1500));
+                while (true) {                    
+                    for(i=0;i<movies1.length;i++) {
+                        hole.setIcon(new ImageIcon("src/main/java/game/" + movies1[i]));
+                        Thread.sleep(random.nextInt(1500));
+                    }
                 }
             } catch (Exception e) {
             }
@@ -45,6 +48,9 @@ public class GopherJFrame extends javax.swing.JFrame {
         hole2.setText("");
         hole3.setText("");
         setTitle("打地鼠遊戲");
+        new Gopher(hole1).start();
+        new Gopher(hole2).start();
+        new Gopher(hole3).start();
     }
 
     /**
