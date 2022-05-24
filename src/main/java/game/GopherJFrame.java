@@ -132,10 +132,6 @@ public class GopherJFrame extends javax.swing.JFrame {
     private void hole1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hole1MousePressed
         if(gopher1.i == 4) {
             hole1.setIcon(new ImageIcon("src/main/java/game/mole4.png"));
-            try {
-                Thread.sleep(2000);
-            } catch (Exception e) {
-            }
             gopher1.i = 0;
         }
     }//GEN-LAST:event_hole1MousePressed
@@ -143,10 +139,6 @@ public class GopherJFrame extends javax.swing.JFrame {
     private void hole2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hole2MousePressed
         if(gopher2.i == 4) {
             hole2.setIcon(new ImageIcon("src/main/java/game/mole4.png"));
-            try {
-                Thread.sleep(2000);
-            } catch (Exception e) {
-            }
             gopher2.i = 0;
         }
     }//GEN-LAST:event_hole2MousePressed
@@ -154,10 +146,6 @@ public class GopherJFrame extends javax.swing.JFrame {
     private void hole3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hole3MousePressed
         if(gopher3.i == 4) {
             hole3.setIcon(new ImageIcon("src/main/java/game/mole4.png"));
-            try {
-                Thread.sleep(2000);
-            } catch (Exception e) {
-            }
             gopher3.i = 0;
         }
     }//GEN-LAST:event_hole3MousePressed
