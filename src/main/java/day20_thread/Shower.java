@@ -25,6 +25,8 @@ public class Shower {
         
     };
     public static void main(String[] args) {
-        
+        Shower shower = new Shower();
+        Thread fatherThread = new Thread(shower.father);
+        fatherThread.start();
     }
 }
