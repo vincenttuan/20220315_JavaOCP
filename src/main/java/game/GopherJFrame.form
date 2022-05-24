@@ -68,16 +68,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="hole1"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hole1MousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="hole2">
       <Properties>
         <Property name="text" type="java.lang.String" value="hole2"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hole2MousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="hole3">
       <Properties>
         <Property name="text" type="java.lang.String" value="hole3"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hole3MousePressed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

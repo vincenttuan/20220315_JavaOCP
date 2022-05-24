@@ -5,6 +5,8 @@
  */
 package game;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -17,7 +19,7 @@ public class GopherJFrame extends javax.swing.JFrame {
     
     String[] movies1 = {"hole.png", "mole1.png", "mole1.png", "mole2.png", "mole3.png", "mole2.png", "mole1.png", "hole.png", };
     String[] movies2 = {"hole.png", "mole1.png", "hole.png", };
-    
+    Gopher gopher1, gopher2, gopher3;
     class Gopher extends Thread {
         Random random = new Random();
         JLabel hole;
@@ -30,7 +32,7 @@ public class GopherJFrame extends javax.swing.JFrame {
                 while (true) {                    
                     for(i=0;i<movies1.length;i++) {
                         hole.setIcon(new ImageIcon("src/main/java/game/" + movies1[i]));
-                        Thread.sleep(random.nextInt(1500));
+                        Thread.sleep(random.nextInt(500));
                     }
                 }
             } catch (Exception e) {
@@ -48,9 +50,12 @@ public class GopherJFrame extends javax.swing.JFrame {
         hole2.setText("");
         hole3.setText("");
         setTitle("打地鼠遊戲");
-        new Gopher(hole1).start();
-        new Gopher(hole2).start();
-        new Gopher(hole3).start();
+        gopher1 = new Gopher(hole1);
+        gopher2 = new Gopher(hole2);
+        gopher3 = new Gopher(hole3);
+        gopher1.start();
+        gopher2.start();
+        gopher3.start();
     }
 
     /**
@@ -70,10 +75,25 @@ public class GopherJFrame extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 102, 0));
 
         hole1.setText("hole1");
+        hole1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                hole1MousePressed(evt);
+            }
+        });
 
         hole2.setText("hole2");
+        hole2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                hole2MousePressed(evt);
+            }
+        });
 
         hole3.setText("hole3");
+        hole3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                hole3MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,6 +128,39 @@ public class GopherJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void hole1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hole1MousePressed
+        if(gopher1.i == 4) {
+            hole1.setIcon(new ImageIcon("src/main/java/game/mole4.png"));
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+            }
+            gopher1.i = 0;
+        }
+    }//GEN-LAST:event_hole1MousePressed
+
+    private void hole2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hole2MousePressed
+        if(gopher2.i == 4) {
+            hole2.setIcon(new ImageIcon("src/main/java/game/mole4.png"));
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+            }
+            gopher2.i = 0;
+        }
+    }//GEN-LAST:event_hole2MousePressed
+
+    private void hole3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hole3MousePressed
+        if(gopher3.i == 4) {
+            hole3.setIcon(new ImageIcon("src/main/java/game/mole4.png"));
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+            }
+            gopher3.i = 0;
+        }
+    }//GEN-LAST:event_hole3MousePressed
 
     /**
      * @param args the command line arguments
