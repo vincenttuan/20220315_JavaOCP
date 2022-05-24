@@ -20,6 +20,10 @@ public class Shower {
         System.out.println("爸爸打電話請瓦斯工人送瓦斯");
         Thread workerThread = new Thread(worker);
         workerThread.start();
+        try {
+            workerThread.join();
+        } catch (Exception e) {
+        }
         System.out.println("爸爸開始洗澡");
         System.out.println("爸爸洗完澡了");
         
