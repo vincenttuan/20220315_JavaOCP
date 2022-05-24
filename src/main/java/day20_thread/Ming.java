@@ -19,7 +19,7 @@ class Mather extends Thread {
 
 public class Ming extends Thread {
     private int money = 100;
-    private Box box = (money) -> System.out.println("小明現在總共有(含box裡) $" + this.money + money);
+    private Box box = (money) -> System.out.println("小明現在總共有(含box裡) $" + (this.money + money));
     @Override
     public void run() {
         System.out.println("小明請媽媽給零用錢並將box給媽媽");
