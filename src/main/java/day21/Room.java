@@ -5,7 +5,7 @@ import java.util.Random;
 public class Room {
     
     // 看診
-    public void watch() throws InterruptedException {
+    public synchronized void watch() throws InterruptedException {
         Random random = new Random();
         String name = Thread.currentThread().getName();
         System.out.printf("%s 進入診間\n", name);
