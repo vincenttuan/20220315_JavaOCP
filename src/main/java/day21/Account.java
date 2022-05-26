@@ -6,6 +6,10 @@ public class Account {
     // 帳戶餘額
     private int balance;
     
+    public Account(int balance) {
+        this.balance = balance;
+    }
+    
     // 查詢餘額
     public int getBalance() {
         return balance;
