@@ -27,6 +27,8 @@ public class Account {
         int current_balance = getBalance();
         System.out.printf("%s 目前帳戶餘額 $%,d\n", name, current_balance);
         // 確認帳戶餘額是否足夠可以提款
+        // 系統會花費一些判斷時間 ...
+        for(int i=0;i<999999999;i++); // 繞回圈來模擬系統很忙...
         if(current_balance >= amount) {
             System.out.printf("%s 開始提款 $%,d\n", name, amount);
             System.out.printf("%s 提款 $%,d 成功\n", name, amount);
