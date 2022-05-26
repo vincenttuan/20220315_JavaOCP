@@ -4,6 +4,7 @@ public class RoomMain {
     public static void main(String[] args) {
         // 有一間房間(診間)
         Room room = new Room();
+        //Room room2 = new Room();
         // 有三位病人
         Person p1 = new Person(room);
         Person p2 = new Person(room);
