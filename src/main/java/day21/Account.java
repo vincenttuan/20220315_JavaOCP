@@ -15,7 +15,7 @@ public class Account {
         return balance;
     }
     // 修改餘額
-    private void setBalance(int new_balance) {
+    private synchronized void setBalance(int new_balance) {
         this.balance = new_balance;
     }
     
