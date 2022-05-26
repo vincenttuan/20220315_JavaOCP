@@ -20,7 +20,7 @@ public class Account {
     }
     
     // 提款 withdraw
-    public void withdraw(int amount) {
+    public synchronized void withdraw(int amount) {
         String name = Thread.currentThread().getName();
         System.out.printf("%s 進來提款 $%,d\n", name, amount);
         // 查詢帳戶餘額
