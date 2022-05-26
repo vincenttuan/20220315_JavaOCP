@@ -1,7 +1,7 @@
 package day21;
 
 // 病人 Patient
-public class Person implements Runnable {
+public class Person extends Thread {
     private Room room;
     // 病人擁有房間
     public Person(Room room) {
