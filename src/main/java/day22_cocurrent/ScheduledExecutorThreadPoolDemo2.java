@@ -1,14 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package day22_cocurrent;
 
-/**
- *
- * @author MB-teacher
- */
+// 重複性排程
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 public class ScheduledExecutorThreadPoolDemo2 {
-    
+    public static void main(String[] args) {
+        ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+        /*
+        Runnable command, 工作
+        long initialDelay, 初始延遲
+        long period, 週期延遲
+        TimeUnit unit 時間單位
+        */
+        service.scheduleAtFixedRate(new Lucky(), 2, 1, TimeUnit.SECONDS);
+        
+    }
 }
