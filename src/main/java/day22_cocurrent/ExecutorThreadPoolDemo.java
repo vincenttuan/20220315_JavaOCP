@@ -21,9 +21,11 @@ public class ExecutorThreadPoolDemo {
         System.out.println("Thread active count: " + Thread.activeCount());
         Thread.sleep(1000);
         Future future = service.submit(new Lotto());
-        System.out.println("future.get() = " + future.get());
+        System.out.println("future.get() = " + future.get()); // future.get() = null
         System.out.println("Thread active count: " + Thread.activeCount());
-        
+        Thread.sleep(2000);
+        Future<Integer> future2 = service.submit(new Number());
+        System.out.println("future2.get() = " + future2.get());
         // 關閉
         service.shutdown();
     }
