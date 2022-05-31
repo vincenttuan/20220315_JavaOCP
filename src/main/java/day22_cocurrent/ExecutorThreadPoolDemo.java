@@ -1,0 +1,30 @@
+package day22_cocurrent;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+public class ExecutorThreadPoolDemo {
+    public static void main(String[] args) throws Exception {
+        // 建立執行服務
+        ExecutorService service = Executors.newCachedThreadPool();
+        // 執行指派任務
+        service.submit(new Lotto());
+        service.submit(new Lotto());
+        service.submit(new Lotto());
+        System.out.println("Thread active count: " + Thread.activeCount());
+        Thread.sleep(3000);
+        service.submit(new Lotto());
+        System.out.println("Thread active count: " + Thread.activeCount());
+        Thread.sleep(5000);
+        service.submit(new Lotto());
+        System.out.println("Thread active count: " + Thread.activeCount());
+        Thread.sleep(1000);
+        Future future = service.submit(new Lotto());
+        System.out.println("future.get() = " + future.get());
+        System.out.println("Thread active count: " + Thread.activeCount());
+        
+        // 關閉
+        service.shutdown();
+    }
+}
