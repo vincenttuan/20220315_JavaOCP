@@ -24,6 +24,7 @@ public class TaskDemo {
         System.out.println("2. DB.data = " + DB.data);
         
         // 偵測 service 是否關閉 ?
+        // while (!service.awaitTermination(1, TimeUnit.MILLISECONDS));
         while (!service.awaitTermination(1, TimeUnit.SECONDS)) {            
             System.out.println("service 尚未關閉");
         }
