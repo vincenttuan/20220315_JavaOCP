@@ -6,9 +6,13 @@ import java.util.concurrent.Future;
 
 public class ExecutorThreadPoolDemo {
     public static void main(String[] args) throws Exception {
-        // 建立執行服務
-        ExecutorService service = Executors.newCachedThreadPool();
+        // 建立執行服務 newCachedThreadPool
+        //ExecutorService service = Executors.newCachedThreadPool();
+        // 建立執行服務 newFixedThreadPool
+        ExecutorService service = Executors.newFixedThreadPool(2);
         // 執行指派任務
+        service.submit(new Lotto());
+        service.submit(new Lotto());
         service.submit(new Lotto());
         service.submit(new Lotto());
         service.submit(new Lotto());
