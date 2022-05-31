@@ -1,11 +1,13 @@
 package day22_cocurrent;
 
-public class ExceptionTask implements Runnable {
+import java.util.concurrent.Callable;
+
+public class ExceptionTask implements Callable<String> {
 
     @Override
-    public void run() {
+    public String call() throws Exception {
         System.out.println("發生錯誤的 Task");
-        throw new RuntimeException("哇哇哇~發生了例外...");
+        throw new Exception("哇哇哇~發生了例外...");
     }
     
 }
