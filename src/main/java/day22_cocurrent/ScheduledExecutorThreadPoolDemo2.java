@@ -15,8 +15,8 @@ public class ScheduledExecutorThreadPoolDemo2 {
         long period, 週期延遲
         TimeUnit unit 時間單位
         */
-        service.scheduleWithFixedDelay(new Lucky(), 2, 2, TimeUnit.SECONDS);
-        //service.scheduleAtFixedRate(new Lucky(), 2, 2, TimeUnit.SECONDS);
+        //service.scheduleWithFixedDelay(new Lucky(), 2, 2, TimeUnit.SECONDS);
+        service.scheduleAtFixedRate(new Lucky(), 2, 2, TimeUnit.SECONDS);
         
     }
 }

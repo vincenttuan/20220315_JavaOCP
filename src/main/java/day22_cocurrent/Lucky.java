@@ -10,7 +10,7 @@ public class Lucky implements Runnable {
         System.out.print("Begin: " + new Date() + " --> ");
         Random random = new Random();
         try {
-            Thread.sleep(random.nextInt(2000)); // 模擬工作時間
+            Thread.sleep(random.nextInt(3000)); // 模擬工作時間
         } catch (Exception e) {
         }
         System.out.print(random.nextInt(100));
