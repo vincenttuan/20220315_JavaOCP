@@ -13,6 +13,7 @@ public class TaskDemo {
         service.submit(new LongTask());
         service.submit(new ShortTask());
         service.submit(new LongTask());
+        service.submit(new ExceptionTask()); // 故意加上一個例外 Task
         service.submit(new LongTask());
         service.submit(new ShortTask());
         service.submit(new ShortTask());
