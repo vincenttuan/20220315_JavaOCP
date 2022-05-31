@@ -13,6 +13,7 @@ public class LongTask implements Runnable {
         } catch (Exception e) {
         }
         System.out.println("長任務結束");
+        DB.data += 3;
     }
     
 }
