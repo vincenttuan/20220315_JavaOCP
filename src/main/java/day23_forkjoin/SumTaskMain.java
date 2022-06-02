@@ -6,7 +6,7 @@ import java.util.concurrent.RecursiveTask;
 
 class SumTask extends RecursiveTask<Integer> {
     // 門檻值
-    private final int THRESHOLD  = 3;
+    private final int THRESHOLD = 3;
     // 任務數組
     private int [] array;
     // 起訖位置
@@ -30,6 +30,8 @@ class SumTask extends RecursiveTask<Integer> {
         }
         // 2. 任務過大, 一分為二
         int middle = (end + start)/2;
+        // log
+        System.out.printf("拆分 %d ~ %d, %d ~ %d\n", start, middle, middle, end);
         // 3. 分裂任務
         SumTask sumTask1 = new SumTask(array, start, middle);
         SumTask sumTask2 = new SumTask(array, middle, end);
@@ -42,6 +44,8 @@ class SumTask extends RecursiveTask<Integer> {
         int subTask2Result = sumTask2.join();
         // 6. 匯總結果
         int result = subTask1Result + subTask2Result;
+        // log
+        System.out.printf("result %d + %d ==> %d\n", subTask1Result, subTask2Result, result);
         return result;
     }
     
