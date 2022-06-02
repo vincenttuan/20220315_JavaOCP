@@ -1,5 +1,7 @@
 package day23_forkjoin;
 
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveTask;
 
 class SumTask extends RecursiveTask<Integer> {
@@ -48,6 +50,8 @@ class SumTask extends RecursiveTask<Integer> {
 public class SumTaskMain {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8,9, 10};
-        
+        ForkJoinTask<Integer> task = new SumTask(array, 0, array.length);
+        int total_result = ForkJoinPool.commonPool().invoke(task);
+        System.out.println("total_result = " + total_result);
     }
 }
