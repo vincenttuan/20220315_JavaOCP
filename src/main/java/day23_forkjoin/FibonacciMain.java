@@ -1,5 +1,6 @@
 package day23_forkjoin;
 
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
 class Fibonacci {
@@ -47,5 +48,14 @@ public class FibonacciMain {
         long endTime = System.currentTimeMillis();
         System.out.printf("傳統遞迴求解第 %d 項 = %,d "
                         + "花費時間: %d ms\n", n, result, (endTime-startTime));
+        // ForkJoin 遞迴求解
+        FibonacciTask task = new FibonacciTask(n);
+        ForkJoinPool pool = ForkJoinPool.commonPool();
+        startTime = System.currentTimeMillis();
+        result = pool.invoke(task);
+        endTime = System.currentTimeMillis();
+        System.out.printf("ForkJoin遞迴求解第 %d 項 = %,d "
+                        + "花費時間: %d ms\n", n, result, (endTime-startTime));
+        
     }
 }
