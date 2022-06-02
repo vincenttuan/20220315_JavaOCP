@@ -1,12 +1,13 @@
 package day23_forkjoin;
 
+import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveTask;
 
 class SumTask extends RecursiveTask<Integer> {
     // 門檻值
-    private final int THRESHOLD = 3;
+    private final int THRESHOLD = 350000;
     // 任務數組
     private int [] array;
     // 起訖位置
@@ -31,7 +32,7 @@ class SumTask extends RecursiveTask<Integer> {
         // 2. 任務過大, 一分為二
         int middle = (end + start)/2;
         // log
-        System.out.printf("拆分 %d ~ %d, %d ~ %d\n", start, middle, middle, end);
+        //System.out.printf("拆分 %d ~ %d, %d ~ %d\n", start, middle, middle, end);
         // 3. 分裂任務
         SumTask sumTask1 = new SumTask(array, start, middle);
         SumTask sumTask2 = new SumTask(array, middle, end);
@@ -45,7 +46,7 @@ class SumTask extends RecursiveTask<Integer> {
         // 6. 匯總結果
         int result = subTask1Result + subTask2Result;
         // log
-        System.out.printf("result %d + %d ==> %d\n", subTask1Result, subTask2Result, result);
+        //System.out.printf("result %d + %d ==> %d\n", subTask1Result, subTask2Result, result);
         return result;
     }
     
@@ -53,9 +54,28 @@ class SumTask extends RecursiveTask<Integer> {
 
 public class SumTaskMain {
     public static void main(String[] args) {
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8,9, 10};
+        Random random = new Random();
+        // 任務
+        int[] array = new int[1_0000_0000];
+        for(int i=0;i<array.length;i++) {
+            array[i] = random.nextInt(100000);
+        }
+        // 傳統解法
+        long startTime = System.currentTimeMillis();
+        int sum = 0;
+        for(int i=0;i<array.length;i++) {
+            sum += array[i];
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.printf("傳統解法花費時間: %d 執行結果: %d\n", (endTime-startTime), sum);
+        
+        
+        // ForkJoin 解法
+        startTime = System.currentTimeMillis();
         ForkJoinTask<Integer> task = new SumTask(array, 0, array.length);
         int total_result = ForkJoinPool.commonPool().invoke(task);
-        System.out.println("total_result = " + total_result);
+        endTime = System.currentTimeMillis();
+        System.out.printf("ForkJoin解法花費時間: %d 執行結果: %d\n", (endTime-startTime), total_result);
+        
     }
 }
