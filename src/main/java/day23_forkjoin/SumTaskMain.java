@@ -71,9 +71,18 @@ public class SumTaskMain {
         
         
         // ForkJoin 解法
+        // 取得電腦內核數量
+        int proc = Runtime.getRuntime().availableProcessors();
+        System.out.printf("CPU 可以使用的內核數量: %d\n", proc);
         startTime = System.currentTimeMillis();
         ForkJoinTask<Integer> task = new SumTask(array, 0, array.length);
-        int total_result = ForkJoinPool.commonPool().invoke(task);
+        // commonPool() 動態使用內核數量
+        ForkJoinPool pool = ForkJoinPool.commonPool();
+        // new ForkJoinPool(proc) <- 可以自訂內核數量
+        //ForkJoinPool pool = new ForkJoinPool(3);
+        System.out.printf("啟用前內核數量: %d\n", pool.getPoolSize());
+        int total_result = pool.invoke(task);
+        System.out.printf("啟用後內核數量: %d\n", pool.getPoolSize());
         endTime = System.currentTimeMillis();
         System.out.printf("ForkJoin解法花費時間: %d 執行結果: %d\n", (endTime-startTime), total_result);
         
