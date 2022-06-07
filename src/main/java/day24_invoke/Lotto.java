@@ -10,7 +10,8 @@ public class Lotto implements Callable<Integer>{
         Random random = new Random();
         String tName = Thread.currentThread().getName();
         System.out.printf("%s 開始搖獎\n", tName);
-        Thread.sleep(random.nextInt(5000));
+        //Thread.sleep(random.nextInt(5000));
+        for(int i=0;i<=999999999;i++);
         int num = random.nextInt(100);  // 0~99
         System.out.printf("%s 搖出 %d\n", tName, num);
         return num;
