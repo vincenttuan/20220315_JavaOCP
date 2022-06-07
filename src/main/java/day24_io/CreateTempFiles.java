@@ -12,7 +12,7 @@ public class CreateTempFiles {
         if(file.isDirectory()) {
             File tmpFile = File.createTempFile("temp", ".txt", file);
             System.out.println(tmpFile + " 建立成功");
-            Runtime.getRuntime().exec("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe tw.yahoo.com");
+            //Runtime.getRuntime().exec("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe tw.yahoo.com");
         }
         
         
