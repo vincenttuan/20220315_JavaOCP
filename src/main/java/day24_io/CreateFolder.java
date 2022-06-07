@@ -9,11 +9,13 @@ public class CreateFolder {
         // File 可以當成檔案或目錄
         String path = "src/main/java/day24_io";
         String folderName = "/data";
+        //String folderName = "/aaa/bbb/ccc";
         String fullPath = path + folderName;
         File file = new File(fullPath);
         if(!file.exists()) {
             // 建立目錄
             file.mkdir();
+            //file.mkdirs();
             System.out.println("建立目錄成功");
         } else {
             System.out.println(file + " 已存在");
