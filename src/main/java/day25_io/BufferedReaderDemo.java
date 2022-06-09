@@ -8,7 +8,6 @@ public class BufferedReaderDemo {
         String path = "src/main/java/day24_io/data/news.txt";
         try(FileReader fr = new FileReader(path);
             BufferedReader br = new BufferedReader(fr);) {
-            
             String data = null;
             // 逐行讀取
             while ((data = br.readLine()) != null) {
