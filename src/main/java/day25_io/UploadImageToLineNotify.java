@@ -20,8 +20,8 @@ public class UploadImageToLineNotify {
         // 5.1 標頭檔 Header
         Map<String, String> headers = new LinkedHashMap<>();
         headers.put("Authorization", "Bearer " + token);
-        HttpPostMultipart multipart = new HttpPostMultipart(lineNotifyUrl, "utf-8", headers);
         // 5.2 POST 參數
+        HttpPostMultipart multipart = new HttpPostMultipart(lineNotifyUrl, "utf-8", headers);
         multipart.addFormField("message", message); // 文字
         multipart.addFilePart("imageFile", file); // 檔案
         // 6. 傳送並取得回傳值
