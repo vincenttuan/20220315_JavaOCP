@@ -53,4 +53,28 @@ insert into emp(name, salary, dept_id) values('Coco', 150000, 3);
 insert into emp(name, salary, dept_id) values('Jack', 63000, 1);
 insert into emp(name, salary, dept_id) values('Jo', 78000, 2);
 
+-- 查詢指令
+select * from dept;
+select * from emp;
+
+select dept.ID, dept."NAME" from dept;
+select emp.ID, emp.DEPT_ID, emp."NAME", emp.SALARY from emp;
+
+select d.ID, d."NAME" from dept d  -- 設定 d 是 dept 的別名
+
+-- 查詢條件 where
+select * from emp where emp.SALARY >= 70000;
+select * from emp where emp.SALARY >= 70000 and emp.SALARY <= 90000 ;
+select * from emp where emp.SALARY between 70000 and 90000;
+select * from emp where emp.DEPT_ID = 2;
+
+-- 總薪資
+select sum(emp.SALARY) as "total" from emp;
+
+-- 各部門總薪資
+select sum(emp.SALARY) as "total" from emp where emp.DEPT_ID = 1;
+select sum(emp.SALARY) as "total" from emp where emp.DEPT_ID = 2;
+select sum(emp.SALARY) as "total" from emp where emp.DEPT_ID = 3;
+
+
 </pre>
