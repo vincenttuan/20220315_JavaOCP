@@ -113,4 +113,11 @@ update emp
 set emp.salary = 12000, emp.dept_id = 1
 where emp.ID = 1;
 
+update emp 
+set emp.salary = 12000, emp.dept_id = 1
+where emp.ID in (1, 3);
+
+-- 刪除
+delete from emp
+where emp.id = 5;
 </pre>
