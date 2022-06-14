@@ -37,4 +37,11 @@ create table emp(
     CONSTRAINT dept_id_ref FOREIGN KEY (dept_id) REFERENCES dept(id),
     primary key(id)
 )
+
+-- 新增 dept 資料
+insert into dept(name) values('IT');
+insert into dept(name) values('Sales');
+insert into dept(name) values('Account');
+
+
 </pre>
