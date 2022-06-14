@@ -98,4 +98,14 @@ select max(emp.SALARY) from emp;
 -- 最低薪資
 select min(emp.SALARY) from emp;
 
+select emp."NAME", emp.SALARY
+from emp
+order by emp.SALARY desc 
+fetch first 1 rows only;
+
+-- 子查詢
+select emp."NAME", emp.SALARY
+from emp
+where emp.SALARY = (select max(emp.SALARY) from emp);
+
 </pre>
