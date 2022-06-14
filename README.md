@@ -36,7 +36,7 @@ create table emp(
     dept_id int not null,
     CONSTRAINT dept_id_ref FOREIGN KEY (dept_id) REFERENCES dept(id),
     primary key(id)
-)
+);
 
 -- 新增 dept 資料
 insert into dept(name) values('IT');
@@ -60,7 +60,7 @@ select * from emp;
 select dept.ID, dept."NAME" from dept;
 select emp.ID, emp.DEPT_ID, emp."NAME", emp.SALARY from emp;
 
-select d.ID, d."NAME" from dept d  -- 設定 d 是 dept 的別名
+select d.ID, d."NAME" from dept d;  -- 設定 d 是 dept 的別名
 
 -- 查詢條件 where
 select * from emp where emp.SALARY >= 70000;
