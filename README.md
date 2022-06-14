@@ -76,5 +76,10 @@ select sum(emp.SALARY) as "total" from emp where emp.DEPT_ID = 1;
 select sum(emp.SALARY) as "total" from emp where emp.DEPT_ID = 2;
 select sum(emp.SALARY) as "total" from emp where emp.DEPT_ID = 3;
 
+-- 各部門總薪資 group by
+select emp.DEPT_ID, sum(emp.SALARY) as "total" 
+from emp
+group by emp.DEPT_ID           -- group by 群組
+order by sum(emp.SALARY) desc  -- order by 排序 預設不寫就是 asc (由小->大), desc (由大->小)
 
 </pre>
