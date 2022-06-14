@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Select {
+public class Read {
     public static void main(String[] args) throws ClassNotFoundException {
         // 若是 JDBC 4.0 以下可以不配置
         //Class.forName("org.apache.derby.jdbc.ClientDriver");
