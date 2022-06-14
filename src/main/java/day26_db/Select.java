@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class Select {
     public static void main(String[] args) throws ClassNotFoundException {
         // 若是 JDBC 4.0 以下可以不配置
-        Class.forName("org.apache.derby.jdbc.AutoloadedDriver");
+        //Class.forName("org.apache.derby.jdbc.ClientDriver");
         // 何謂 JDBC 4.0
         // 就是在 xxx.jar 中有包含 META-INF > services > java.sql.Driver 的結構內容
         // 讓 Java 程式可以自動根據默認位置 META-INF > services > java.sql.Driver 找到 Driver 名稱並且自動建立
