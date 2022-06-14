@@ -90,6 +90,12 @@ where e.DEPT_ID = d.ID;
 select d."NAME" as "部門名稱", e."NAME" as "員工姓名"
 from emp e, dept d
 where e.DEPT_ID = d.ID
-order by d."NAME"
+order by d."NAME" asc, e."NAME" desc
+
+-- 最高薪資
+select max(emp.SALARY) from emp;
+
+-- 最低薪資
+select min(emp.SALARY) from emp;
 
 </pre>
