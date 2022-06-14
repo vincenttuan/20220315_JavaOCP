@@ -82,4 +82,14 @@ from emp
 group by emp.DEPT_ID           -- group by 群組
 order by sum(emp.SALARY) desc  -- order by 排序 預設不寫就是 asc (由小->大), desc (由大->小)
 
+-- 每一個部門名稱有哪些員工
+select e.DEPT_ID, d."NAME", e."NAME"
+from emp e, dept d
+where e.DEPT_ID = d.ID;
+
+select d."NAME" as "部門名稱", e."NAME" as "員工姓名"
+from emp e, dept d
+where e.DEPT_ID = d.ID
+order by d."NAME"
+
 </pre>
