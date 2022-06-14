@@ -43,5 +43,14 @@ insert into dept(name) values('IT');
 insert into dept(name) values('Sales');
 insert into dept(name) values('Account');
 
+-- 新增 emp 資料
+insert into emp(name, salary, dept_id) values('John', 50000, 1);
+insert into emp(name, salary, dept_id) values('Mary', 80000, 2);
+insert into emp(name, salary, dept_id) values('Bob', 75000, 2);
+insert into emp(name, salary, dept_id) values('Helen', 45000, 1);
+insert into emp(name, salary, dept_id) values('Angle', 95000, 3);
+insert into emp(name, salary, dept_id) values('Coco', 150000, 3);
+insert into emp(name, salary, dept_id) values('Jack', 63000, 1);
+insert into emp(name, salary, dept_id) values('Jo', 78000, 2);
 
 </pre>
