@@ -108,4 +108,9 @@ select emp."NAME", emp.SALARY
 from emp
 where emp.SALARY = (select max(emp.SALARY) from emp);
 
+-- 修改 
+update emp 
+set emp.salary = 12000, emp.dept_id = 1
+where emp.ID = 1;
+
 </pre>
