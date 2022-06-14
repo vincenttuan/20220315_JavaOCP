@@ -13,7 +13,7 @@ https://mkyong.com/java8/java-8-how-to-sort-list-with-stream-sorted/
 Java 8 – How to sort a Map
 https://mkyong.com/java8/java-8-how-to-sort-a-map/
 
-
+<pre>
 建立部門資料表(dept)
     id   序號(主鍵) int
     name 部門名稱 varchar(20)
@@ -37,3 +37,4 @@ create table emp(
     CONSTRAINT dept_id_ref FOREIGN KEY (dept_id) REFERENCES dept(id),
     primary key(id)
 )
+</pre>
